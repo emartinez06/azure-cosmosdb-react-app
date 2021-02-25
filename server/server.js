@@ -1,6 +1,7 @@
 const express = require('express');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const http = require('http');
 require('dotenv').config();
 
@@ -14,6 +15,9 @@ app.use(bodyParser.json());
 
 //Helmet middleware
 app.use(helmet.hidePoweredBy());
+
+//Cors middleware
+app.use(cors());
 
 //Routes
 app.use('/api', card);

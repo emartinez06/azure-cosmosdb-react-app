@@ -38,17 +38,6 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-// function getData(){
-//   let cardsInfo;
-//   fetch('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Blue-Eyes')
-//     .then(response => response.json())
-//     .then(data => {
-//       cardsInfo = data.data;
-//       console.log(cardsInfo);
-//     })
-//     .catch(err => console.log(err));
-// }
-
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -68,20 +57,16 @@ function App() {
 
   //let cardsInfo;
   //let dataUrl = 'https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Blue-Eyes';
-  axios.get('http://jsonplaceholder.typicode.com/todos')
+  //let dataUrl = 'http://jsonplaceholder.typicode.com/todos';
+  let dataUrl = 'http://localhost:5050/api/cards'
+  axios.get(dataUrl)
     .then(function (response) {
-      console.log(response.data)
+      console.log(response.data);
+      
     })
     .catch(function (error) {
       console.log(error)
     });
-  // fetch('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Blue-Eyes')
-  //   .then(response => response.json())
-  //   .then(data => {
-  //     cardsInfo = data.data;
-  //     console.log(cardsInfo);
-  //   })
-  //   .catch(err => console.log(err));
 
   return (
     <React.Fragment>
